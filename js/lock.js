@@ -26,7 +26,7 @@ function clearCode() {
 function submitCode() {
   if (enteredCode === correctCode) {
     // Redirige o desbloquea
-    window.location.href = 'index.html';
+    window.location.href = 'portada.html';
   } else {
     display.textContent = '❌ Código incorrecto';
     setTimeout(() => {
