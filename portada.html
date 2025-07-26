@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menú Principal - Sofía & Sergio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdce5, #fdd3e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 32px;
+      color: #9b1fa8;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      color: crimson;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .menu-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 20px;
+      width: 130px;
+      height: 120px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      font-size: 16px;
+      color: #444;
+      cursor: pointer;
+      gap: 10px;
+    }
+
+    .menu-btn img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-btn:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Oculta el reproductor de audio */
+    audio {
+      display: none;
+    }
+
+    /* Botón de música */
+    #music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fff;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Sofía & Sergio</h1>
+    <p class="date">Desde el 04-11-2024</p>
+
+    <nav class="menu">
+      <button class="menu-btn" data-target="momentos.html">
+        <img src="img/camara.png" alt="Recuerdos" />
+        Recuerdos
+      </button>
+      <button class="menu-btn" data-target="calendario.html">
+        <img src="img/calendario.png" alt="Calendario" />
+        Calendario
+      </button>
+      <button class="menu-btn" data-target="juego.html">
+        <img src="img/puzzle.png" alt="Rompecabezas" />
+        Rompecabezas
+      </button>
+      <button class="menu-btn" data-target="carta.html">
+        <img src="img/carta.png" alt="Carta" />
+        Carta
+      </button>
+    </nav>
+  </main>
+
+  <!-- 🎵 Música de fondo -->
+  <audio id="bg-music" src="audio/music.mp3" autoplay loop></audio>
+
+  <!-- 🔘 Botón para controlar la música -->
+  <button id="music-toggle" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        toggleBtn.textContent = "🔊";
+      } else {
+        music.pause();
+        toggleBtn.textContent = "🔇";
+      }
+    }
+
+    // Navegar al hacer clic en los botones
+    document.querySelectorAll('.menu-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        if (target) {
+          window.location.href = target;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
