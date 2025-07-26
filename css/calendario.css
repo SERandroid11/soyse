@@ -1,0 +1,340 @@
+/* Estilo base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evita scroll lateral */
+  background: linear-gradient(to bottom, #ffe0f0, #ffcce6);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.counter-section {
+  width: 90%;
+  max-width: 500px;
+  height: 100%;
+  min-height: 90vh;
+  background: white;
+  border-radius: 30px;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+.counter-section h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #9b1fa8;
+}
+
+/* Título */
+.counter-box h1 {
+  text-align: center;
+  color: #a100a7;
+  margin-bottom: 10px;
+  color: #9b1fa8;
+  font-size: 80px;
+  font-weight: 700;
+  margin: 1rem 0 15rem; /* espacio arriba y abajo */
+}
+
+/* Corazón */
+.heart {
+  font-size: 70px; /* antes 50px */
+  margin-bottom: 25px; /* antes 50px */
+  color: #d81b60;
+}
+
+/* Foto redonda */
+.profile-pic {
+  width: 250px; /* tamaño más grande, pero controlado */
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #f8a1bb;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.4);
+  margin: 0 auto 20px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Contador */
+.countdown {
+  background: #ffd7e2;
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(216,27,96,0.25);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown > div {
+  text-align: center;
+  min-width: 50px;
+}
+
+.countdown .number {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: #bf1556;
+  text-shadow: 1px 1px 2px #fff6f9;
+}
+
+.countdown .label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #bf1556;
+  margin-top: 3px;
+}
+
+.countdown-colon {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: #bf1556;
+  line-height: 42px;
+  user-select: none;
+}
+
+/* Texto final */
+.footer-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #bf1556;
+  text-align: center;
+}
+
+/* Fondo y estructura general */
+body {
+  background: linear-gradient(135deg, #ffe0f0, #fce4ec);
+  color: #9b1fa8;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  user-select: none;
+  min-height: 100vh;
+  min-height: 100dvh; /* Soporte para móviles modernos */
+  box-sizing: border-box;
+}
+
+/* Contenedor principal para centrar todo */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título */
+h1 {
+  font-weight: 700;
+  font-size: 80px;
+  margin-bottom: 20px;
+  margin: 0 0 5rem; /* espacio arriba y abajo */
+  
+}
+
+/* Subtítulo */
+.subtitle {
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #e94c7c;
+  font-size: 30px;
+}
+
+/* Corazón grande */
+.heart {
+  font-size: 100px;
+  margin-bottom: 50px;
+  color: #d81b60;
+}
+
+/* Imagen redonda */
+.profile-pic {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 5px solid #f8a1bb;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.4);
+  cursor: pointer;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contador */
+.countdown {
+  background: #ffd7e2;
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.25);
+  margin-bottom: 25px;
+  user-select: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.countdown > div {
+  text-align: center;
+  min-width: 50px;
+}
+
+.countdown .number {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: #bf1556;
+  text-shadow: 1px 1px 2px #fff6f9;
+}
+
+.countdown .label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #bf1556;
+  margin-top: 3px;
+}
+
+.countdown-colon {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: #bf1556;
+  user-select: none;
+  line-height: 42px;
+}
+
+/* Texto debajo */
+.footer-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  color: #bf1556;
+}
+
+.footer-heart {
+  font-size: 1.8rem;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 25px 30px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 25px rgba(216, 27, 96, 0.3);
+  position: relative;
+  color: #9b1fa8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.modal-header {
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #9b1fa8;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #d81b60;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Cuadrícula de meses (si la usás) */
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.month-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.15);
+  text-align: center;
+  cursor: default;
+  user-select: none;
+}
+
+.month-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 7px rgba(216, 27, 96, 0.3);
+}
+
+.month-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #d81b60;
+}

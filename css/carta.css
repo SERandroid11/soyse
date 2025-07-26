@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Evita el scroll inicial */
+}
+
+body {
+  background: linear-gradient(135deg, #ffe0f0, #fce4ec);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+/* Título centrado arriba */
+.titulo {
+  text-align: center;
+  color: #9b1fa8;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #fff;
+  color: #9b1fa8;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 2rem 0 2rem; /* espacio arriba y abajo */
+}
+
+/* Contenedor del sobre */
+.container {
+  position: relative;
+  width: 350px;
+  height: 400px;
+}
+
+/* Sobre */
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+/* Tapa del sobre */
+.flap {
+  position: absolute;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: #ff7b93;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  z-index: 4;
+  transform-origin: top center;
+  transition: transform 0.8s ease-in-out;
+}
+
+.flap.behind {
+  transform: rotateX(180deg) scale(0.9);
+  opacity: 0.4;
+  z-index: 0 !important;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Parte inferior del sobre */
+.body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-color: #ff4f6d;
+  clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 3;
+  transform: translateZ(0);
+  will-change: clip-path;
+}
+
+/* Corazón */
+.heart {
+  position: absolute;
+  top: 280px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Carta */
+.letter {
+  position: absolute;
+  top: 80%; /* Parte media del sobre */
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transform: translateY(0); /* Sin desplazamiento inicial */
+  opacity: 0;
+  overflow-y: hidden;
+  max-height: 260px;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.letter h2 {
+  color: #9b1fa8;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  
+}
+
+.letter p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Estado abierto */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  transform: translateY(-130%);
+  opacity: 1;
+}
+
+.envelope.open .heart {
+  opacity: 0;
+}
+
+/* Modal de pantalla completa */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 230, 240, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 40px 20px;
+}
+
+.fullscreen-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fullscreen-content h2 {
+  color: #9b1fa8;
+  margin-bottom: 15px;
+}
+
+.fullscreen-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #e6336a;
+}

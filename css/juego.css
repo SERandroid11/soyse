@@ -1,0 +1,190 @@
+/* Fuente similar a Geist */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffd2e1, #ffb8d0);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Título principal */
+h1 {
+  color: #9b1fa8;
+  font-size: 2.2rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------- JUEGO DE MEMORIA ---------------- */
+
+.game-wrapper {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: #9b1fa8;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de cartas */
+.jigsaw-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Tarjeta */
+.card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* cuadrado 1:1 */
+  perspective: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(216,27,96,0.3);
+  cursor: pointer;
+}
+
+.card-inner {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #ff3399;
+  border: 2px dashed #ff66a3;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mensaje de victoria */
+.win-message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #4caf50;
+  display: none;
+}
+
+/* ---------------- GALERÍA ---------------- */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* ---------------- STACK DE FOTOS ---------------- */
+
+.photo-stack {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.photo-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  touch-action: none;
+  cursor: pointer;
+  transform-origin: center;
+  background-color: #fff;
+  z-index: 0;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+
+  .photo-card {
+    width: 90vw;
+    height: 130vw;
+  }
+
+  .gallery img {
+    width: 45vw;
+    height: 30vw;
+  }
+}

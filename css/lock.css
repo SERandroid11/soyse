@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fce4ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.lock-container {
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 75%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.lock-icon {
+  width: 100px;
+  margin-bottom: 15px;
+}
+h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #8e24aa;
+}
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+.input-display {
+  font-size: 32px;
+  letter-spacing: 12px;
+  padding: 10px;
+  background-color: #8e24aa;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.keypad button {
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f8bbd0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.keypad button:hover {
+  background-color: #f48fb1;
+}
